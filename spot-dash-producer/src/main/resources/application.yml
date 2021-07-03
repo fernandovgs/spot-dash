@@ -1,0 +1,13 @@
+server:
+  port: 9001
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: playground-spot-dash
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
