@@ -5,9 +5,13 @@ spring:
     mongodb:
       host: localhost
       port: 27017
-      database: playground-spot-dash
+      database: spot-dash
   kafka:
     producer:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+spotify:
+  user: ${SPOTIFY_USER}
+  secret: ${SPOTIFY_PASSWORD}
+  playlist-trending-50: 37i9dQZEVXbMDoHDwVN2tF
