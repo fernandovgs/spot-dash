@@ -14,3 +14,4 @@ spring:
 spotify:
   user: ${SPOTIFY_USER}
   secret: ${SPOTIFY_PASSWORD}
+  playlist-trending-50: 37i9dQZEVXbMDoHDwVN2tF
