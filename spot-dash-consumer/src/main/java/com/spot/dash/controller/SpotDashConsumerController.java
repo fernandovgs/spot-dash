@@ -1,5 +1,7 @@
 package com.spot.dash.controller;
 
+import com.spot.dash.model.dto.DailyAveragesDto;
+import com.spot.dash.model.dto.DailyAveragesListDto;
 import com.spot.dash.model.dto.TrackInfosListDto;
 import com.spot.dash.service.SpotDashConsumerService;
 import lombok.AllArgsConstructor;
@@ -23,5 +25,17 @@ public class SpotDashConsumerController {
             @RequestParam Optional<String> receivedDate
     ) {
         return spotDashConsumerService.getAllTrackInfosFromADay(receivedDate);
+    }
+
+    @GetMapping("/get-daily-averages")
+    public DailyAveragesListDto getDailyAverages(
+            @RequestParam Optional<String> analysisDate
+    ) {
+        return spotDashConsumerService.getDailyAverages(analysisDate);
+    }
+
+    @GetMapping("/get-all-averages")
+    public DailyAveragesListDto getDailyAverages() {
+        return spotDashConsumerService.getAllAverages();
     }
 }
