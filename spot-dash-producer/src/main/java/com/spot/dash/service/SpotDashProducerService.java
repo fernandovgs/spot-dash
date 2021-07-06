@@ -12,6 +12,7 @@ import org.apache.hc.core5.http.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -39,6 +40,7 @@ public class SpotDashProducerService {
 
     private static final String TOPIC_TRACKS = "tracks";
 
+    @Scheduled(cron = "0 0 12 * * *")
     public List<TrackInfosDto> getTrackInfos() throws IOException, ParseException, SpotifyWebApiException {
         var tracks = getTracks();
         var audiosFeatures = getAudioFeatures(tracks);
