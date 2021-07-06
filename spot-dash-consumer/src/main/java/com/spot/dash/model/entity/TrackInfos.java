@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collation = "track-infos")
+@Document(collection = "trackInfos")
 public class TrackInfos {
 
     @Transient
@@ -25,5 +25,5 @@ public class TrackInfos {
     private String artistName;
     private Float energy;
     private Float valence;
-    private LocalDate receivedDate;
+    private String receivedDate;
 }

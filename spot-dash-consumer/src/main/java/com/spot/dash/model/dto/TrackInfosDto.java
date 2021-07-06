@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-
 @Data
 @Builder
 @AllArgsConstructor
@@ -18,5 +16,5 @@ public class TrackInfosDto {
     private String artistName;
     private Float energy;
     private Float valence;
-    private LocalDate receivedDate;
+    private String receivedDate;
 }

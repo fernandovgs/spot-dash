@@ -47,7 +47,7 @@ public class SpotDashConsumer {
         // Saving average values in repository
         var dailyAverages = DailyAverages.builder()
                 .id(UUID.randomUUID().toString())
-                .analysisDate(LocalDate.now())
+                .analysisDate(LocalDate.now().toString())
                 .avgEnergy((float) trackInfosList.stream()
                         .mapToDouble(TrackInfos::getEnergy)
                         .average()

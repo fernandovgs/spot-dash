@@ -7,20 +7,17 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
-import java.util.UUID;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document(collation = "daily-averages")
+@Document(collection = "dailyAverages")
 public class DailyAverages {
 
     @Id
     private String id;
 
-    private LocalDate analysisDate;
+    private String analysisDate;
     private Float avgEnergy;
     private Float avgValence;
 }
