@@ -1,7 +1,7 @@
-package com.spot.dash.spotdashproducer.controller;
+package com.spot.dash.controller;
 
-import com.spot.dash.spotdashproducer.model.dto.UserDto;
-import com.spot.dash.spotdashproducer.service.UserService;
+import com.spot.dash.model.dto.UserDto;
+import com.spot.dash.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

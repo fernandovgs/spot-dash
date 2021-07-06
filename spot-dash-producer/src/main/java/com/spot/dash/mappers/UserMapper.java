@@ -1,7 +1,7 @@
-package com.spot.dash.spotdashproducer.mappers;
+package com.spot.dash.mappers;
 
-import com.spot.dash.spotdashproducer.model.dto.UserDto;
-import com.spot.dash.spotdashproducer.model.entity.User;
+import com.spot.dash.model.entity.User;
+import com.spot.dash.model.dto.UserDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

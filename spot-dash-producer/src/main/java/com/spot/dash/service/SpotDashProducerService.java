@@ -1,7 +1,7 @@
-package com.spot.dash.spotdashproducer.service;
+package com.spot.dash.service;
 
-import com.spot.dash.spotdashproducer.model.dto.TrackInfosDto;
-import com.spot.dash.spotdashproducer.model.dto.TrackInfosListDto;
+import com.spot.dash.model.dto.TrackInfosDto;
+import com.spot.dash.model.dto.TrackInfosListDto;
 import com.wrapper.spotify.SpotifyApi;
 import com.wrapper.spotify.exceptions.SpotifyWebApiException;
 import com.wrapper.spotify.model_objects.specification.AudioFeatures;

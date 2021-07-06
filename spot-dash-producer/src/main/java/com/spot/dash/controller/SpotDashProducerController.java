@@ -1,7 +1,7 @@
-package com.spot.dash.spotdashproducer.controller;
+package com.spot.dash.controller;
 
-import com.spot.dash.spotdashproducer.model.dto.TrackInfosDto;
-import com.spot.dash.spotdashproducer.service.SpotDashProducerService;
+import com.spot.dash.model.dto.TrackInfosDto;
+import com.spot.dash.service.SpotDashProducerService;
 import com.wrapper.spotify.exceptions.SpotifyWebApiException;
 import lombok.AllArgsConstructor;
 import org.apache.hc.core5.http.ParseException;

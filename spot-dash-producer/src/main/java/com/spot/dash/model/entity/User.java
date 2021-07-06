@@ -1,4 +1,4 @@
-package com.spot.dash.spotdashproducer.model.entity;
+package com.spot.dash.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

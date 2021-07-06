@@ -1,4 +1,4 @@
-package com.spot.dash.spotdashproducer.model.dto;
+package com.spot.dash.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

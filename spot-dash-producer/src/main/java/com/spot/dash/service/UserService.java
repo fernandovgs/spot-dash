@@ -1,9 +1,9 @@
-package com.spot.dash.spotdashproducer.service;
+package com.spot.dash.service;
 
-import com.spot.dash.spotdashproducer.mappers.UserMapper;
-import com.spot.dash.spotdashproducer.model.dto.UserDto;
-import com.spot.dash.spotdashproducer.model.entity.User;
-import com.spot.dash.spotdashproducer.model.repository.UserRepository;
+import com.spot.dash.mappers.UserMapper;
+import com.spot.dash.model.dto.UserDto;
+import com.spot.dash.model.entity.User;
+import com.spot.dash.model.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
