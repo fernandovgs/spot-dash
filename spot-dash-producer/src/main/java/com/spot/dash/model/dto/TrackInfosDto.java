@@ -18,5 +18,5 @@ public class TrackInfosDto {
     private String artistName;
     private Float energy;
     private Float valence;
-    private LocalDate receivedDate;
+    private String receivedDate;
 }

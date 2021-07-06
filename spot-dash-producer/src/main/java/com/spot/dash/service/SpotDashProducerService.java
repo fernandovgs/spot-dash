@@ -61,7 +61,7 @@ public class SpotDashProducerService {
                             )
                             .energy(audioFeatures.getEnergy())
                             .valence(audioFeatures.getValence())
-                            .receivedDate(LocalDate.now())
+                            .receivedDate(LocalDate.now().toString())
                             .build()
             );
         });
