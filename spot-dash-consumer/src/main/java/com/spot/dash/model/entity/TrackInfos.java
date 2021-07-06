@@ -7,6 +7,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,5 +23,7 @@ public class TrackInfos {
 
     private String name;
     private String artistName;
-    private Float liveness;
+    private Float energy;
+    private Float valence;
+    private LocalDate receivedDate;
 }

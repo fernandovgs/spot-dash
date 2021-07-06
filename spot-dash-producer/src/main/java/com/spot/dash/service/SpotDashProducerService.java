@@ -15,6 +15,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -56,7 +57,9 @@ public class SpotDashProducerService {
                                     .stream(track.getArtists())
                                     .collect(Collectors.toList()).get(0).getName()
                             )
-                            .liveness(audioFeatures.getLiveness())
+                            .energy(audioFeatures.getEnergy())
+                            .valence(audioFeatures.getValence())
+                            .receivedDate(LocalDate.now())
                             .build()
             );
         });
