@@ -1,6 +1,7 @@
 package com.spot.dash.spotdashproducer.service;
 
 import com.spot.dash.spotdashproducer.model.dto.TrackInfosDto;
+import com.spot.dash.spotdashproducer.model.dto.TrackInfosListDto;
 import com.wrapper.spotify.SpotifyApi;
 import com.wrapper.spotify.exceptions.SpotifyWebApiException;
 import com.wrapper.spotify.model_objects.specification.AudioFeatures;
@@ -8,7 +9,9 @@ import com.wrapper.spotify.model_objects.specification.Track;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.apache.hc.core5.http.ParseException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -29,6 +32,11 @@ public class SpotDashProducerService {
 
     @Value("${spotify.playlist-trending-50}")
     private String spotifyTrending50PlaylistListId;
+
+    @Autowired
+    private KafkaTemplate<String, TrackInfosListDto> kafkaTemplate;
+
+    private static final String TOPIC_TRACKS = "tracks";
 
     public List<TrackInfosDto> getTrackInfos() throws IOException, ParseException, SpotifyWebApiException {
         var tracks = getTracks();
@@ -52,6 +60,12 @@ public class SpotDashProducerService {
                             .build()
             );
         });
+
+        var trackInfosListDto = TrackInfosListDto.builder()
+                .trackInfosDtos(trackInfosDtos)
+                .build();
+
+        kafkaTemplate.send(TOPIC_TRACKS, trackInfosListDto);
 
         return trackInfosDtos;
     }

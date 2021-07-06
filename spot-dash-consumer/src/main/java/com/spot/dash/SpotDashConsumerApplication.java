@@ -1,4 +1,4 @@
-package com.spot.dash.spotdashconsumer;
+package com.spot.dash;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
