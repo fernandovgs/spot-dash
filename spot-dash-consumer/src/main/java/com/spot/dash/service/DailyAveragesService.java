@@ -21,32 +21,13 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 @NoArgsConstructor
-public class SpotDashConsumerService {
-
-    @Autowired
-    private static final TrackInfosMapper trackInfosMapper = TrackInfosMapper.INSTANCE;
+public class DailyAveragesService {
 
     @Autowired
     private static final DailyAveragesMapper dailyAveragesMapper = DailyAveragesMapper.INSTANCE;
 
     @Autowired
-    private TrackInfosRepository trackInfosRepository;
-
-    @Autowired
     private DailyAveragesRepository dailyAveragesRepository;
-
-    public TrackInfosListDto getAllTrackInfosFromADay(Optional<String> receivedDate) {
-        var tracksInfos = trackInfosRepository
-                .findByReceivedDate(receivedDate.orElseGet(() -> LocalDate.now().toString()));
-
-        List<TrackInfosDto> trackInfosDtos = new ArrayList<>();
-
-        tracksInfos.forEach((trackInfos -> trackInfosDtos.add(trackInfosMapper.toDTO(trackInfos))));
-
-        return TrackInfosListDto.builder()
-                .trackInfosDtos(trackInfosDtos)
-                .build();
-    }
 
     public DailyAveragesListDto getDailyAverages(Optional<String> analysisDate) {
         var dailyAverages = dailyAveragesRepository
