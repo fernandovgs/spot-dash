@@ -30,6 +30,7 @@ This project uses the following languages and tools:
 3. spring-boot-spotify-api: a useful framework to be used along with Spring Boot;
 4. Kafka: distributed event streaming platform;
 5. MongoDB: NoSQL database.
+6. Streamlit: open source app framework for Data Science.
 
 ---
 
@@ -40,6 +41,7 @@ The following tools must be installed:
 * OpenJDK 11
 * MongoDB
 * Apache Kafka
+* Streamlit (added with ```pip install streamlit```)
 
 For Spotify API usage, it is necessary to have an application in [Spotify for Developers](https://developer.spotify.com/dashboard/login) in order to have a Client ID and a Client Secret. After obtaining those, one must configure the environment variables SPOTIFY_USER=<your Spotify's client id> and SPOTIFY_PASSWORD=<your Spotify's client secret>.
 
